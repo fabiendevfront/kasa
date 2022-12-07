@@ -1,6 +1,5 @@
-import logo from "../../assets/logo_header.svg";
-import "./App.scss";
-import Header from "../Header/Header";
+import logo from "../assets/logo_header.svg";
+import Header from "./Header";
 
 function App() {
     return (
