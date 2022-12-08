@@ -1,0 +1,24 @@
+/**********/
+/* FONTS */
+/*********/
+
+$font-default: 'Montserrat', sans-serif;
+
+/***********/
+/* COLORS */
+/**********/
+
+$primary-color: #FF6060;
+$white: #ffffff;
+$black: #000000;
+
+
+/***************/
+/* RESPONSIVE */
+/**************/
+
+// 1.Breakpoints map for responsive
+$breakpoints: (
+    medium: 1024px,
+    small: 768px
+);

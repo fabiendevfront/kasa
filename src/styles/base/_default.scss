@@ -1,13 +1,32 @@
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+/************/
+/* GENERAL */
+/***********/
+
+* {
+    box-sizing: border-box;
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
+*:focus-visible {
+    box-shadow: 0 0 0 4px variables.$black;
+    outline: 0;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+li {
+    list-style-type: none;
 }
