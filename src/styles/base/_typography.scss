@@ -13,5 +13,10 @@ body {
 }
 
 a {
+    color: variables.$primary-color;
     text-decoration: none;
+
+    &:hover {
+        color: variables.$white;
+    }
 }

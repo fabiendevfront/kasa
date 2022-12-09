@@ -10,7 +10,7 @@
 }
 
 *:focus-visible {
-    box-shadow: 0 0 0 4px variables.$black;
+    box-shadow: 0 0 0 4px variables.$primary-color;
     outline: 0;
 }
 
@@ -20,6 +20,10 @@ html {
 
 body {
     margin: 0;
+}
+
+main {
+    padding: variables.$wrapper;
 }
 
 img {
