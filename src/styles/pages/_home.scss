@@ -1,0 +1,19 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.home {
+
+    &__banner {
+        margin: 63px 0 43px 0;
+    }
+
+    &__lodgings {
+        padding: 50px;
+        background-color: darken(variables.$white, 3.5%);
+        border-radius: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+    }
+}
