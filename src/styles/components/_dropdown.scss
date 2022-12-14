@@ -1,0 +1,48 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.dropdown {
+    width: 1023px;
+    margin: 0 auto;
+
+
+    &__header {
+        width: 100%;
+        background-color: variables.$primary-color;
+        display: inline-flex;
+        justify-content: space-between;
+        padding: 8px 18px;
+        border-radius: 5px;
+    }
+
+    &__title {
+        @include mixins.font-size(24px);
+        font-weight: 500;
+        color: variables.$white;
+        margin: 0;
+    }
+
+    &__arrow {}
+
+    &__content {
+        display: none;
+        background-color: #F6F6F6;
+        border-radius: 5px;
+    }
+
+    &__txt {
+        @include mixins.font-size(24px);
+        padding: 36px 18px 20px;
+        margin-top: -10px;
+    }
+
+    &--active {
+        .dropdown__arrow {
+            transform: rotate(-180deg);
+        }
+
+        .dropdown__content {
+            display: block;
+        }
+    }
+}

@@ -2,9 +2,10 @@
 @use '../abstracts/mixins';
 
 .home {
+    margin: 63px 0 50px 0;
 
     &__banner {
-        margin: 63px 0 43px 0;
+        margin-bottom: 43px;
     }
 
     &__lodgings {

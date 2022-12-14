@@ -1,0 +1,16 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.about {
+    margin: 63px 0 50px 0;
+
+    &__banner {
+        margin-bottom: 31px;
+    }
+
+    &__dropdowns {
+        display: flex;
+        flex-direction: column;
+        gap: 31px;
+    }
+}
