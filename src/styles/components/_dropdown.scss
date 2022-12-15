@@ -4,6 +4,7 @@
 .dropdown {
     width: 1023px;
     margin: 0 auto;
+    cursor: pointer;
 
 
     &__header {
@@ -22,11 +23,9 @@
         margin: 0;
     }
 
-    &__arrow {}
-
     &__content {
         display: none;
-        background-color: #F6F6F6;
+        background-color: variables.$bg-grey;
         border-radius: 5px;
     }
 

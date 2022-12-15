@@ -10,7 +10,7 @@
 
     &__lodgings {
         padding: 50px;
-        background-color: darken(variables.$white, 3.5%);
+        background-color: variables.$bg-grey;
         border-radius: 25px;
         display: flex;
         flex-wrap: wrap;

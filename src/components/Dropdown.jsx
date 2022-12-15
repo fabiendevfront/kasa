@@ -6,7 +6,6 @@ const Dropdown = ({ title, txt }) => {
     const [toggle, setToggle] = useState(false);
 
     const toggleDropdown = () => {
-        console.log(toggle);
         setToggle(!toggle);
     };
 
