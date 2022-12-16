@@ -7,6 +7,18 @@
     background-color: variables.$bg-grey;
     border-radius: 25px;
 
+    &__picture {
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        object-fit: cover;
+        display: none;
+
+        &--active {
+            display: block;
+        }
+    }
+
     &__arrow {
         position: absolute;
         cursor: pointer;
@@ -23,15 +35,12 @@
         }
     }
 
-    &__picture {
-        width: 100%;
-        height: 100%;
-        border-radius: 25px;
-        object-fit: cover;
-        display: none;
-
-        &--active {
-            display: block;
-        }
+    &__count {
+        position: absolute;
+        bottom: 25px;
+        right: 50%;
+        color: variables.$white;
+        font-weight: 500;
     }
+
 }

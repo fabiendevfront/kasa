@@ -27,14 +27,15 @@ const Carousel = ({ pictures }) => {
 
     return (
         <div className="carousel">
-            <img className="carousel__arrow carousel__arrow--left" src={arrow} alt="Précedente" onClick={previous} />
             {pictures.map((picture, index) => {
                 return (
                     <img key={index} className={index === show ? "carousel__picture carousel__picture--active" : "carousel__picture"} src={picture} alt="Visuel de la location" />
                 );
             })
             }
+            <img className="carousel__arrow carousel__arrow--left" src={arrow} alt="Précedente" onClick={previous} />
             <img className="carousel__arrow carousel__arrow--right" src={arrow} alt="Suivante" onClick={next} />
+            <span className="carousel__count">{`${show + 1} / ${indexPictures}`}</span>
         </div>
     );
 };
