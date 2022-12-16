@@ -1,0 +1,37 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+
+.carousel {
+    position: relative;
+    background-color: variables.$bg-grey;
+    border-radius: 25px;
+
+    &__arrow {
+        position: absolute;
+        cursor: pointer;
+
+        &--left {
+            top: 45%;
+            left: 23px;
+            transform: rotate(-180deg);
+        }
+
+        &--right {
+            top: 45%;
+            right: 23px;
+        }
+    }
+
+    &__picture {
+        width: 100%;
+        height: 100%;
+        border-radius: 25px;
+        object-fit: cover;
+        display: none;
+
+        &--active {
+            display: block;
+        }
+    }
+}
