@@ -1,0 +1,60 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.lodging {
+    margin: 63px 0 50px 0;
+
+    &__carousel {
+        margin-bottom: 43px;
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__title {
+        @include mixins.font-size(36px);
+        font-weight: 500;
+
+        margin: 0;
+    }
+
+    &__location {
+        font-weight: 500;
+        margin: 0 0 20px 0;
+    }
+
+    &__details {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 24px;
+    }
+
+    &__tags {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .tag {
+            margin-right: 10px;
+        }
+    }
+
+    &__dropdowns {
+        display: flex;
+        justify-content: space-between;
+
+        .dropdown {
+            width: 582px;
+
+            &__txt {
+                @include mixins.font-size(18px);
+
+                span {
+                    display: block;
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
-const Tag = () => {
+const Tag = ({ txt }) => {
     return (
-        <div className="tag">Tag du logement</div>
+        <span className="tag">{txt}</span>
     );
 };
 

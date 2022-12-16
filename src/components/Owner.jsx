@@ -1,7 +1,10 @@
-const Owner = () => {
+const Owner = ({ host }) => {
     return (
         <div className="owner">
-            <h2>Propriétaire</h2>
+            <h3 className="owner__name">{host.name}</h3>
+            <div className="owner__picture">
+                <img src={host.picture} alt="Propriétaire de la location" />
+            </div>
         </div>
     );
 };

@@ -1,0 +1,17 @@
+@use '../abstracts/variables';
+
+.star {
+    display: flex;
+    gap: 10px;
+
+    &__item {
+
+        &--empty {
+            fill: #E3E3E3;
+        }
+
+        &--filled {
+            fill: variables.$primary-color;
+        }
+    }
+}
