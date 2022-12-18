@@ -2,7 +2,6 @@ import { useState } from "react";
 import arrow from "../assets/arrow_horizontal.svg";
 
 const Carousel = ({ pictures }) => {
-    console.log(pictures);
 
     let [show, setShow] = useState(0);
     let indexPictures = pictures.length;

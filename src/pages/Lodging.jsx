@@ -9,7 +9,6 @@ import Star from "../components/Star";
 const Lodging = () => {
     const params = useParams();
     const lodgingInfos = lodgings.filter(lodging => lodging.id === params.id)[0];
-    console.log(lodgingInfos);
 
     const tags = lodgingInfos.tags.map((tags, index) => {
         return <Tag key={index} txt={tags} />;
