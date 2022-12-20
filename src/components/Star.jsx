@@ -1,5 +1,10 @@
 import starSvg from "../assets/star.svg";
 
+/**
+ * Component for Star
+ * @param {number} props.rating - The rating for the star component.
+ * @returns A React component.
+ */
 const Star = ({ rating }) => {
     const stars = [];
     const max = 5;

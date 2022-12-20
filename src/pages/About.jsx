@@ -3,6 +3,10 @@ import Banner from "../components/Banner";
 import aboutBanner from "../assets/about.png";
 import Dropdown from "../components/Dropdown";
 
+/**
+ * Component for About Page
+ * @returns A React component
+ */
 const About = () => {
     return (
         <div className="about">

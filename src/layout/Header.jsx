@@ -1,6 +1,10 @@
 import logo from "../assets/logo_header.svg";
 import { NavLink, Link } from "react-router-dom";
 
+/**
+ * Component for Header
+ * @returns A React component
+ */
 const Header = () => {
     return (
         <header className="header">

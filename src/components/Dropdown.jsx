@@ -1,10 +1,19 @@
 import { useState } from "react";
 import arrowVertical from "../assets/arrow_vertical.svg";
 
+/**
+ * Component for Dropdown
+ * @param {string} props.title - The title for the dropdown.
+ * @param {string} props.txt - The text for the dropdown.
+ * @returns A React component.
+ */
 const Dropdown = ({ title, txt }) => {
-
+    /* Create a State Hook */
     const [toggle, setToggle] = useState(false);
 
+    /**
+   * Toggles the dropdown open or closed.
+   */
     const toggleDropdown = () => {
         setToggle(!toggle);
     };

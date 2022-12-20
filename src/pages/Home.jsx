@@ -3,6 +3,10 @@ import Banner from "../components/Banner";
 import homeBanner from "../assets/home.png";
 import LodgingCard from "../components/LodgingCard";
 
+/**
+ * Component for Home Page
+ * @returns A React component.
+ */
 const Home = () => {
     return (
         <div className="home">

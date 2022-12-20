@@ -6,7 +6,12 @@ import Owner from "../components/Owner";
 import Tag from "../components/Tag";
 import Star from "../components/Star";
 
+/**
+ * Component for Lodging Page
+ * @returns A React component
+ */
 const Lodging = () => {
+    /* Get the lodging's ID in the URL */
     const params = useParams();
     const lodgingInfos = lodgings.filter(lodging => lodging.id === params.id)[0];
 
@@ -17,7 +22,6 @@ const Lodging = () => {
     const equipments = lodgingInfos.equipments.map((equipment, index) => {
         return <span key={index}>{equipment}</span>;
     });
-
 
     return (
         <>

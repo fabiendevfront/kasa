@@ -1,11 +1,20 @@
 import { useState } from "react";
 import arrow from "../assets/arrow_horizontal.svg";
 
+/**
+ * Component for Banner
+ * @param {string[]} props.pictures - The URLs for the pictures in the carousel.
+ * @returns A React component.
+ */
 const Carousel = ({ pictures }) => {
-
+    /* Create a State Hook */
     let [show, setShow] = useState(0);
     let indexPictures = pictures.length;
 
+    /**
+   * Sets the state to show the previous picture in the carousel.
+   * If the first picture is already showing, shows the last picture.
+   */
     const previous = () => {
         if (show === 0) {
             setShow(indexPictures - 1);
@@ -15,6 +24,10 @@ const Carousel = ({ pictures }) => {
         return (setShow);
     };
 
+    /**
+   * Sets the state to show the next picture in the carousel.
+   * If the last picture is already showing, shows the first picture.
+   */
     const next = () => {
         if (show === indexPictures - 1) {
             setShow(indexPictures = 0);
