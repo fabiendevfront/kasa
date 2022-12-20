@@ -1,12 +1,25 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
+/**************************/
+/* LODGING CARD COMPONENT */
+/*************************/
+
 .lodging-card {
     position: relative;
     width: 340px;
     height: 340px;
     background-color: variables.$primary-color;
     border-radius: 10px;
+
+    @include mixins.medium-break {
+        width: 100%;
+        height: 350px;
+    }
+
+    @include mixins.small-break {
+        height: 255px;
+    }
 
     &:hover {
         .lodging-card__overlay {
@@ -23,6 +36,7 @@
         height: 100%;
         top: 0;
         left: 0;
+        border-radius: 10px;
     }
 
     &__overlay {

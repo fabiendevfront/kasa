@@ -1,19 +1,33 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
+/*****************/
+/* HEADER LAYOUT */
+/*****************/
 
 .header {
     width: 100%;
-    height: 68px;
-    padding: variables.$wrapper;
-    margin-top: 40px;
+    padding: 40px 8% 0 8%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 
+    @include mixins.small-break {
+        padding: 20px 20px 0 20px;
+    }
+
     h1 {
+        line-height: 0;
         margin: 0;
+    }
+
+    &__logo {
+        height: 68px;
+
+        @include mixins.small-break {
+            height: 47px;
+        }
     }
 
     &__nav-link {
@@ -21,6 +35,12 @@
         @include mixins.font-size(24px);
         font-weight: 500;
         margin-right: 47px;
+
+        @include mixins.small-break {
+            @include mixins.font-size(12px);
+            text-transform: uppercase;
+            margin-right: 10px;
+        }
 
         &:last-child {
             margin-right: 0;

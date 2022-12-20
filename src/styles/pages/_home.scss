@@ -1,11 +1,20 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
+/*******************/
+/* HOMEPAGE STYLE */
+/******************/
+
 .home {
-    margin: 63px 0 50px 0;
 
     &__banner {
+        height: 223px;
         margin-bottom: 43px;
+
+        @include mixins.small-break {
+            height: 111px;
+            margin-bottom: 22px;
+        }
     }
 
     &__lodgings {
@@ -16,5 +25,15 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 30px;
+
+        @include mixins.medium-break {
+            border-radius: 10px;
+        }
+
+        @include mixins.small-break {
+            padding: 0;
+            background-color: variables.$white;
+            gap: 20px;
+        }
     }
 }

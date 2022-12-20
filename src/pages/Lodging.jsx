@@ -25,18 +25,20 @@ const Lodging = () => {
                 lodgingInfos ? (
                     <div className="lodging">
                         <Carousel pictures={lodgingInfos.pictures} />
-                        <div className="lodging__head">
-                            <h2 className="lodging__title">{lodgingInfos.title}</h2>
-                            <div className="lodging__owner">
-                                <Owner host={lodgingInfos.host} />
+                        <div className="lodging__description">
+                            <div className="lodging__infos">
+                                <h2 className="lodging__title">{lodgingInfos.title}</h2>
+                                <h3 className="lodging__location">{lodgingInfos.location}</h3>
+                                <div className="lodging__tags">
+                                    {tags}
+                                </div>
                             </div>
-                        </div>
-                        <h3 className="lodging__location">{lodgingInfos.location}</h3>
-                        <div className="lodging__details">
-                            <div className="lodging__tags">
-                                {tags}
+                            <div className="lodging__details">
+                                <div className="lodging__owner">
+                                    <Owner host={lodgingInfos.host} />
+                                </div>
+                                <Star rating={lodgingInfos.rating} />
                             </div>
-                            <Star rating={lodgingInfos.rating} />
                         </div>
                         <div className="lodging__dropdowns">
                             <Dropdown title="Description" txt={lodgingInfos.description} />

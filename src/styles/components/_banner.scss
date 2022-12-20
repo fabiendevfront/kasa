@@ -1,11 +1,19 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
+/********************/
+/* BANNER COMPONENT */
+/********************/
+
 .banner {
     position: relative;
     width: 100%;
-    height: 223px;
+    height: 100%;
     border-radius: 25px;
+
+    @include mixins.medium-break {
+        border-radius: 10px;
+    }
 
     &__title {
         position: absolute;
@@ -19,6 +27,17 @@
         @include mixins.font-size(48px);
         font-weight: 500;
         color: variables.$white;
+
+        @include mixins.medium-break {
+            @include mixins.font-size(36px);
+        }
+
+        @include mixins.small-break {
+            white-space: normal;
+            @include mixins.font-size(24px);
+            left: 16px;
+            transform: translateY(-50%);
+        }
     }
 
     &__overlay,
@@ -26,6 +45,10 @@
         width: 100%;
         height: 100%;
         border-radius: 25px;
+
+        @include mixins.medium-break {
+            border-radius: 10px;
+        }
     }
 
     &__overlay {

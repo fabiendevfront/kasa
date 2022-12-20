@@ -1,26 +1,44 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
+/*******************/
+/* 404 PAGE STYLE */
+/******************/
+
 .error404 {
     margin: 63px 0 50px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
 
     &__title {
         font-weight: 700;
         @include mixins.font-size(288px);
-        line-height: 1;
+        line-height: 1.2;
         margin: 0;
+
+        @include mixins.small-break {
+            padding-top: 80px;
+            @include mixins.font-size(96px);
+        }
     }
 
     &__txt {
         font-weight: 500;
+        margin: 0;
         @include mixins.font-size(36px);
+        margin: 0 0 76px 0;
+
+        @include mixins.small-break {
+            margin: 25px 0 90px 0;
+            @include mixins.font-size(18px);
+        }
     }
 
     &__link {
         font-weight: 500;
         text-decoration: underline;
+
+        @include mixins.small-break {
+            @include mixins.font-size(14px);
+        }
     }
 }

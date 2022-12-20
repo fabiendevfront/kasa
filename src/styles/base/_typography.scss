@@ -12,6 +12,10 @@ body {
     color: variables.$primary-color;
 }
 
+h3 {
+    @include mixins.font-size(18px);
+}
+
 a {
     color: variables.$primary-color;
     text-decoration: none;

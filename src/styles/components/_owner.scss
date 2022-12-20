@@ -1,6 +1,10 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
+/********************/
+/* OWNER COMPONENT */
+/*******************/
+
 .owner {
     display: flex;
     align-items: center;
@@ -12,12 +16,21 @@
         text-align: right;
         margin: 0;
         font-weight: 500;
+
+        @include mixins.small-break {
+            @include mixins.font-size(12px);
+        }
     }
 
     &__picture {
         border-radius: 50%;
         width: 64px;
         height: 64px;
+
+        @include mixins.small-break {
+            width: 32px;
+            height: 32px;
+        }
 
         img {
             width: 100%;

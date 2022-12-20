@@ -1,13 +1,29 @@
 @use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+/*******************/
+/* STAR COMPONENT */
+/******************/
 
 .star {
     display: flex;
     gap: 10px;
 
+    @include mixins.small-break {
+        gap: 7px;
+    }
+
     &__item {
 
+        svg {
+            @include mixins.small-break {
+                width: 15px;
+                height: 15px;
+            }
+        }
+
         &--empty {
-            fill: #E3E3E3;
+            fill: variables.$grey-light;
         }
 
         &--filled {
