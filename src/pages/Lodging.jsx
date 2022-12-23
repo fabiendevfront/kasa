@@ -1,5 +1,5 @@
-import { useParams, Navigate } from "react-router-dom";
-import lodgings from "../data/lodgings.json";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import Carousel from "../components/Carousel";
 import Dropdown from "../components/Dropdown";
 import Owner from "../components/Owner";
@@ -13,44 +13,68 @@ import Star from "../components/Star";
 const Lodging = () => {
     /* Get the lodging's ID in the URL */
     const params = useParams();
-    const lodgingInfos = lodgings.filter(lodging => lodging.id === params.id)[0];
+    const navigate = useNavigate();
+    /* Create a State Hook */
+    const [lodgingData, setLodgingData] = useState();
+    const [lodgingError, setLodgingError] = useState(false);
 
-    const tags = lodgingInfos.tags.map((tags, index) => {
-        return <Tag key={index} txt={tags} />;
-    });
+    /**
+     * Effect Hook that performs an action when the component is mounted and/or when its dependencies change.
+    */
+    useEffect(() => {
+        const getLodging = async () => {
+            try {
+                const response = await fetch("/data/lodgings.json");
+                const lodgingList = await response.json();
+                // Filter the lodgings by the id of the url
+                const lodgingInfo = lodgingList.filter(lodging => lodging.id === params.id)[0];
+                if (lodgingInfo) {
+                    setLodgingData(lodgingInfo);
+                } else {
+                    navigate("/error404");
+                }
+            } catch (error) {
+                console.error(error);
+                setLodgingError(true);
+            }
+        };
+        getLodging();
+    }, [params, navigate]);
 
-    const equipments = lodgingInfos.equipments.map((equipment, index) => {
-        return <span key={index}>{equipment}</span>;
-    });
+    if (lodgingError) {
+        return <span>Erreur de connexion à la base de données</span>;
+    }
 
     return (
         <>
-            {
-                lodgingInfos ? (
-                    <div className="lodging">
-                        <Carousel pictures={lodgingInfos.pictures} />
-                        <div className="lodging__description">
-                            <div className="lodging__infos">
-                                <h2 className="lodging__title">{lodgingInfos.title}</h2>
-                                <h3 className="lodging__location">{lodgingInfos.location}</h3>
-                                <div className="lodging__tags">
-                                    {tags}
-                                </div>
-                            </div>
-                            <div className="lodging__details">
-                                <div className="lodging__owner">
-                                    <Owner host={lodgingInfos.host} />
-                                </div>
-                                <Star rating={lodgingInfos.rating} />
+            {lodgingData && (
+                <div className="lodging">
+                    <Carousel pictures={lodgingData.pictures} />
+                    <div className="lodging__description">
+                        <div className="lodging__infos">
+                            <h2 className="lodging__title">{lodgingData.title}</h2>
+                            <h3 className="lodging__location">{lodgingData.location}</h3>
+                            <div className="lodging__tags">
+                                {lodgingData.tags.map((tags, index) =>
+                                    <Tag key={index} txt={tags} />
+                                )}
                             </div>
                         </div>
-                        <div className="lodging__dropdowns">
-                            <Dropdown title="Description" txt={lodgingInfos.description} />
-                            <Dropdown title="Équipements" txt={equipments} />
+                        <div className="lodging__details">
+                            <div className="lodging__owner">
+                                <Owner host={lodgingData.host} />
+                            </div>
+                            <Star rating={lodgingData.rating} />
                         </div>
                     </div>
-                ) : (<Navigate replace to="/404" />)
-            }
+                    <div className="lodging__dropdowns">
+                        <Dropdown title="Description" txt={lodgingData.description} />
+                        <Dropdown title="Équipements" txt={lodgingData.equipments.map((equipment, index) =>
+                            <span key={index}>{equipment}</span>
+                        )} />
+                    </div>
+                </div>
+            )}
         </>
     );
 };

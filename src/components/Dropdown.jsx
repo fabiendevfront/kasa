@@ -12,7 +12,7 @@ const Dropdown = ({ title, txt }) => {
     const [toggle, setToggle] = useState(false);
 
     /**
-   * Toggles the dropdown open or closed.
+   * Toggle the dropdown open or closed.
    */
     const toggleDropdown = () => {
         setToggle(!toggle);
