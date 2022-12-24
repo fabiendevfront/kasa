@@ -39,7 +39,7 @@ const Lodging = () => {
             }
         };
         getLodging();
-    }, [params, navigate]);
+    }, [params.id, navigate]);
 
     if (lodgingError) {
         return <span>Erreur de connexion à la base de données</span>;

@@ -6,8 +6,8 @@ Projet réalisé dans le cadre du parcours de développeur d'application Javascr
 
 ## Languages & outils
 
-* [React](https://fr.reactjs.org/) Bibliothèque JavaScript pour créer des interfaces utilisateurs
-* [React Router](https://reactrouter.com/en/main) Bibliothèque qui permet de transformer une app React en SPA
+* [React](https://fr.reactjs.org/) - Bibliothèque JavaScript pour créer des interfaces utilisateurs
+* [React Router](https://reactrouter.com/en/main) - Bibliothèque qui permet de transformer une app React en SPA
 * [SASS](https://sass-lang.com/) - Préprocesseur CSS
 * [ESLint](https://eslint.org/) - Outil d'analyse de code
 * [Figma](https://www.figma.com/) - Outil d'UI design
